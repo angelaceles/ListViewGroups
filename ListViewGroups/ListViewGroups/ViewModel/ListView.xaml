@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ListViewGroups.ViewModel.ListView">
+    <ContentPage.Content>
+        <ListView x:Name ="lstView" 
+                  IsGroupingEnabled="true" 
+                  SeparatorColor="Black"
+                  RowHeight="50"
+                  GroupDisplayBinding="{Binding LongIdentity}" 
+                  GroupShortNameBinding="{Binding ShortIdentity}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Code}"
+                                  Detail = "{Binding LastName}"
+                                  TextColor="Red"
+                                  DetailColor="Goldenrod"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
